@@ -8,7 +8,7 @@ using UNO.GamePlay;
 
 public class SplashScreen : MonoBehaviour
 {
-	private int m_movieIndex;
+	//private int m_movieIndex;
 
 	public GameObject PS4ScreenPlane;
 
@@ -18,38 +18,40 @@ public class SplashScreen : MonoBehaviour
 
 	public GameObject m_epilepsyWarning;
 
-	private List<MovieTexture> m_movieList = new List<MovieTexture>();
+	//private readonly List<MovieTexture> m_movieList = new List<MovieTexture>();
 
-	private bool m_showVideo;
+	//private readonly bool m_showVideo;
 
 	private void Start()
 	{
 		SimpleSingleton<UplayPC>.Instance.Attach();
 		initGamePlayLogic();
-		base.StartCoroutine(begin());
-		QualitySettings.vSyncCount = 0;
+		StartCoroutine(begin());
+        QualitySettings.vSyncCount = 0;
 	}
 
-	private IEnumerator begin()
+	IEnumerator begin()
 	{
-		yield return (object)new WaitForSeconds(0.05f);
-		m_epilepsyWarning.GetComponent<epliepsyController>().go(playMovies);
+        //yield return new WaitForSeconds(0.05f);
+        yield return new WaitForEndOfFrame();
+		//m_epilepsyWarning.GetComponent<epliepsyController>().go(playMovies);
 		string url = "Menu/3D_Assets/MainMenu/SpawnManager";
-		yield return (object)new WaitForSeconds(3f);
+		//yield return new WaitForSeconds(3f);
 		ResourceRequest resourceRequest = Resources.LoadAsync(url);
-		yield return (object)resourceRequest;
+		yield return resourceRequest;
 		GameObject prefab = resourceRequest.asset as GameObject;
-		Singleton<PreloadSystem>.Instance.cacheGameObject(prefab, url);
-	}
+        Singleton<PreloadSystem>.Instance.cacheGameObject(prefab, url);
+        SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single); //Immediately skip the intro videos and load the main menu.
+    }
 
-	private void playMovies()
+	/*private void playMovies()
 	{
 		loadMovieList();
 		m_showVideo = true;
 		playMovieTexture(m_movieIndex);
-	}
+	}*/
 
-	private void OnGUI()
+	/*private void OnGUI()
 	{
 		if (m_showVideo)
 		{
@@ -66,9 +68,9 @@ public class SplashScreen : MonoBehaviour
 			}
 			GUI.DrawTexture(new Rect(0f, 0f, (float)Screen.width, (float)Screen.height), m_movieList[m_movieIndex], ScaleMode.StretchToFill, false, 0f);
 		}
-	}
+	}*/
 
-	private void loadMovieList()
+	/*private void loadMovieList()
 	{
 		string[] movieList = MovieList;
 		foreach (string str in movieList)
@@ -76,9 +78,9 @@ public class SplashScreen : MonoBehaviour
 			MovieTexture item = Resources.Load("Video_PCX1/" + str) as MovieTexture;
 			m_movieList.Add(item);
 		}
-	}
+	}*/
 
-	private void playMovieTexture(int _idx)
+	/*private void playMovieTexture(int _idx)
 	{
 		m_movieList[_idx].Play();
 		AudioSource component = base.GetComponent<AudioSource>();
@@ -88,24 +90,24 @@ public class SplashScreen : MonoBehaviour
 		{
 			SimpleSingleton<AudioManager>.Instance.playEvent("Play_Sfx_UNO_Logo");
 		}
-	}
+	}*/
 
-	private string GenerateMoviePath(string _str)
+	/*private string GenerateMoviePath(string _str)
 	{
 		return Path.Combine(Application.streamingAssetsPath, "Movies//intro//" + _str + ".mp4");
-	}
+	}*/
 
-	private void onMovieFinished()
+	/*private void onMovieFinished()
 	{
-		base.StartCoroutine(end());
-	}
+		StartCoroutine(end());
+	}*/
 
-	private IEnumerator end()
+	/*private IEnumerator end()
 	{
-		m_epilepsyWarning.GetComponent<epliepsyController>().ShowVideoWarn();
-		yield return (object)new WaitForSeconds(5f);
+        //m_epilepsyWarning.GetComponent<epliepsyController>().ShowVideoWarn();
+        yield return new WaitForSeconds(5f);
 		SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
-	}
+	}*/
 
 	private void initGamePlayLogic()
 	{
