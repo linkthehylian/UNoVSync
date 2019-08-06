@@ -1,2 +1,2 @@
 # UNoVSync
-Play Uno (2016) without forced vsync.
+Enjoy Uno with your friends without being forced vsync.
