@@ -27,7 +27,7 @@ public class SplashScreen : MonoBehaviour
 		SimpleSingleton<UplayPC>.Instance.Attach();
 		initGamePlayLogic();
 		StartCoroutine(begin());
-        QualitySettings.vSyncCount = 0;
+        QualitySettings.vSyncCount = 0; //Force vsync off.
 	}
 
 	IEnumerator begin()
@@ -44,16 +44,20 @@ public class SplashScreen : MonoBehaviour
         SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single); //Immediately load the main menu.
     }
 
-	/*private void playMovies()
+    /*private void playMovies()
 	{
 		loadMovieList();
 		m_showVideo = true;
 		playMovieTexture(m_movieIndex);
 	}*/
 
-	/*private void OnGUI()
+    
+
+    
+
+	private void OnGUI()
 	{
-		if (m_showVideo)
+		/*if (m_showVideo)
 		{
 			if (!m_movieList[m_movieIndex].isPlaying)
 			{
@@ -67,8 +71,9 @@ public class SplashScreen : MonoBehaviour
 				playMovieTexture(m_movieIndex);
 			}
 			GUI.DrawTexture(new Rect(0f, 0f, (float)Screen.width, (float)Screen.height), m_movieList[m_movieIndex], ScaleMode.StretchToFill, false, 0f);
-		}
-	}*/
+		}*/
+
+	}
 
 	/*private void loadMovieList()
 	{
