@@ -34,14 +34,14 @@ public class SplashScreen : MonoBehaviour
 	{
         //yield return new WaitForSeconds(0.05f);
         yield return new WaitForEndOfFrame();
-		//m_epilepsyWarning.GetComponent<epliepsyController>().go(playMovies);
+		//m_epilepsyWarning.GetComponent<epliepsyController>().go(playMovies); //Skip intro videos.
 		string url = "Menu/3D_Assets/MainMenu/SpawnManager";
 		//yield return new WaitForSeconds(3f);
 		ResourceRequest resourceRequest = Resources.LoadAsync(url);
 		yield return resourceRequest;
 		GameObject prefab = resourceRequest.asset as GameObject;
         Singleton<PreloadSystem>.Instance.cacheGameObject(prefab, url);
-        SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single); //Immediately skip the intro videos and load the main menu.
+        SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single); //Immediately load the main menu.
     }
 
 	/*private void playMovies()
