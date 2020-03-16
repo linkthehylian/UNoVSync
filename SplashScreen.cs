@@ -28,6 +28,7 @@ public class SplashScreen : MonoBehaviour
         initGamePlayLogic();
         StartCoroutine(begin());
         QualitySettings.vSyncCount = 0; //Force vsync off.
+        Application.targetFrameRate = -1; //Even though vsync is already off, this makes sure we get variable framerate regardless.
     }
 
     IEnumerator begin()
