@@ -8,38 +8,38 @@ using UNO.GamePlay;
 
 public class SplashScreen : MonoBehaviour
 {
-	//private int m_movieIndex;
+    //private int m_movieIndex;
 
-	public GameObject PS4ScreenPlane;
+    public GameObject PS4ScreenPlane;
 
-	public GameObject X1ScreenPlane;
+    public GameObject X1ScreenPlane;
 
-	public string[] MovieList;
+    public string[] MovieList;
 
-	public GameObject m_epilepsyWarning;
+    public GameObject m_epilepsyWarning;
 
-	//private readonly List<MovieTexture> m_movieList = new List<MovieTexture>();
+    //private readonly List<MovieTexture> m_movieList = new List<MovieTexture>();
 
-	//private readonly bool m_showVideo;
+    //private readonly bool m_showVideo;
 
-	private void Start()
-	{
-		SimpleSingleton<UplayPC>.Instance.Attach();
-		initGamePlayLogic();
-		StartCoroutine(begin());
+    private void Start()
+    {
+        SimpleSingleton<UplayPC>.Instance.Attach();
+        initGamePlayLogic();
+        StartCoroutine(begin());
         QualitySettings.vSyncCount = 0; //Force vsync off.
-	}
+    }
 
-	IEnumerator begin()
-	{
+    IEnumerator begin()
+    {
         //yield return new WaitForSeconds(0.05f);
         yield return new WaitForEndOfFrame();
-		//m_epilepsyWarning.GetComponent<epliepsyController>().go(playMovies); //Skip intro videos.
-		string url = "Menu/3D_Assets/MainMenu/SpawnManager";
-		//yield return new WaitForSeconds(3f);
-		ResourceRequest resourceRequest = Resources.LoadAsync(url);
-		yield return resourceRequest;
-		GameObject prefab = resourceRequest.asset as GameObject;
+        //m_epilepsyWarning.GetComponent<epliepsyController>().go(playMovies); //Skip intro videos.
+        string url = "Menu/3D_Assets/MainMenu/SpawnManager";
+        //yield return new WaitForSeconds(3f);
+        ResourceRequest resourceRequest = Resources.LoadAsync(url);
+        yield return resourceRequest;
+        GameObject prefab = resourceRequest.asset as GameObject;
         Singleton<PreloadSystem>.Instance.cacheGameObject(prefab, url);
         SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single); //Immediately load the main menu.
     }
@@ -51,13 +51,13 @@ public class SplashScreen : MonoBehaviour
 		playMovieTexture(m_movieIndex);
 	}*/
 
-    
 
-    
 
-	private void OnGUI()
-	{
-		/*if (m_showVideo)
+
+
+    private void OnGUI()
+    {
+        /*if (m_showVideo)
 		{
 			if (!m_movieList[m_movieIndex].isPlaying)
 			{
@@ -73,9 +73,9 @@ public class SplashScreen : MonoBehaviour
 			GUI.DrawTexture(new Rect(0f, 0f, (float)Screen.width, (float)Screen.height), m_movieList[m_movieIndex], ScaleMode.StretchToFill, false, 0f);
 		}*/
 
-	}
+    }
 
-	/*private void loadMovieList()
+    /*private void loadMovieList()
 	{
 		string[] movieList = MovieList;
 		foreach (string str in movieList)
@@ -85,7 +85,7 @@ public class SplashScreen : MonoBehaviour
 		}
 	}*/
 
-	/*private void playMovieTexture(int _idx)
+    /*private void playMovieTexture(int _idx)
 	{
 		m_movieList[_idx].Play();
 		AudioSource component = base.GetComponent<AudioSource>();
@@ -97,30 +97,30 @@ public class SplashScreen : MonoBehaviour
 		}
 	}*/
 
-	/*private string GenerateMoviePath(string _str)
+    /*private string GenerateMoviePath(string _str)
 	{
 		return Path.Combine(Application.streamingAssetsPath, "Movies//intro//" + _str + ".mp4");
 	}*/
 
-	/*private void onMovieFinished()
+    /*private void onMovieFinished()
 	{
 		StartCoroutine(end());
 	}*/
 
-	/*private IEnumerator end()
+    /*private IEnumerator end()
 	{
         //m_epilepsyWarning.GetComponent<epliepsyController>().ShowVideoWarn();
         yield return new WaitForSeconds(5f);
 		SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
 	}*/
 
-	private void initGamePlayLogic()
-	{
-		RootScript.RunInBackground(false, "SplashScreen.Start");
-		SimpleSingleton<MultiplayerManager>.Instance.Attach();
-		SimpleSingleton<ProductManager>.Instance.Attach();
-		SimpleSingleton<UserManagerAdapter>.Instance.Attach();
-		SimpleSingleton<AudioManager>.Instance.Attach();
-		SimpleSingleton<AudioManager>.Instance.registerSoundBank();
-	}
+    private void initGamePlayLogic()
+    {
+        RootScript.RunInBackground(false, "SplashScreen.Start");
+        SimpleSingleton<MultiplayerManager>.Instance.Attach();
+        SimpleSingleton<ProductManager>.Instance.Attach();
+        SimpleSingleton<UserManagerAdapter>.Instance.Attach();
+        SimpleSingleton<AudioManager>.Instance.Attach();
+        SimpleSingleton<AudioManager>.Instance.registerSoundBank();
+    }
 }
