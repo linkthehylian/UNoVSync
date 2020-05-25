@@ -19,7 +19,7 @@ Here are the changes I've made with the game:
 
 ### - Can I get banned for using this?
 
-No, all modifications I (myself) and Exile have made are local changes and only affect you.
+No, all modifications I (myself) and ExiMichi have made are local changes and only affect you.
 
 ### - When do you roll out updates for the mod?
 
