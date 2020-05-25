@@ -13,7 +13,7 @@ Here are the changes I've made with the game:
 
 - Text that displays before the game reaches the menu ("Attaching Uplay service.", "Loading title screen.") 
 - Title screen music has been removed
-- ExiMichi's [UNO skins]()
+- ExiMichi's [UNO skins](https://github.com/linkthehylian/UNoVSync/wiki/ExiMichi's-UNO-Skins)
 - V-Sync toggle in Settings (takes immediate effect)
 
 ### - Are you able to fix the disconnection issues?
