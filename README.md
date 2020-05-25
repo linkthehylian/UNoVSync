@@ -7,7 +7,7 @@ I know having vsync off for a card game sounds a bit silly, but I really didn't 
 
 ### - What all has been changed with your mod?
 
-Nothing that would alter your gameplay or online interactions. I did some small personal changes before the game actually reaches the menu (you'll know what I'm talking about). And made a toggable GUI in the Settings to turn vsync on or off.
+Nothing that would alter your gameplay or online interactions. I did some small personal changes before the game actually reaches the menu (listed below). And made a toggable GUI in the Settings to turn vsync on or off.
 
 Here are the changes I've made with the game:
 
