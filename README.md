@@ -37,4 +37,4 @@ Probably not. That's something on Ubisoft's end.
 
 Sure. 
 
-Dsicord: linkthehylian#2771
+Discord: linkthehylian#2771
