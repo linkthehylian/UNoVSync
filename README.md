@@ -7,7 +7,14 @@ I know having vsync off for a card game sounds a bit silly, but I really didn't 
 
 ### - What all has been changed with your mod?
 
-Nothing that would alter your gameplay or online interactions. I did some small personal changes before the game actually reaches the menu (you'll know what I'm talking about). And made a toggable GUI in the Options to turn vsync on or off.
+Nothing that would alter your gameplay or online interactions. I did some small personal changes before the game actually reaches the menu (you'll know what I'm talking about). And made a toggable GUI in the Settings to turn vsync on or off.
+
+Here are the changes I've made with the game:
+
+- Text that displays before the game reaches the menu ("Attaching Uplay service.", "Loading title screen.") 
+- Title screen music has been removed
+- ExiMichi's [UNO skins]()
+- V-Sync toggle in Settings (takes immediate effect)
 
 ### - Are you able to fix the disconnection issues?
 
