@@ -12,6 +12,7 @@ Nothing that would alter your gameplay or online interactions. I did some small 
 Here are the changes I've made with the game:
 
 - Text that displays before the game reaches the menu ("Attaching Uplay service.", "Loading title screen.") 
+- Intro video has been removed.
 - Title screen music has been removed
 - ExiMichi's [UNO skins](https://github.com/linkthehylian/UNoVSync/wiki/ExiMichi's-UNO-Skins)
 - V-Sync toggle in Settings (takes immediate effect)
