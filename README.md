@@ -23,7 +23,7 @@ No, all modifications I (myself) and ExiMichi have made are local changes and on
 
 ### - When do you roll out updates for the mod?
 
-When Ubisoft pushes out new updates for their game.
+When Ubisoft rolls out new updates for their game.
 
 ### - Am I allowed to make modifications to this and redistribute it?
 
