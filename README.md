@@ -27,7 +27,7 @@ When Ubisoft rolls out new updates for their game.
 
 ### - Am I allowed to make modifications to this and redistribute it?
 
-Rather you wouldn't, if you want something added/modified me you can contact me (found below).
+Rather you wouldn't, if you want something added/modified you can contact me (found below).
 
 ### - Are you able to fix the disconnection issues?
 
