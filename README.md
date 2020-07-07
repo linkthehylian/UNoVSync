@@ -1,5 +1,5 @@
 # UNoVSync
-Ubisoft apparently didn't include an option to toggle vsync in their [game](https://store.steampowered.com/app/470220/UNO/). So I forced it off myself.
+For Ubisoft's [UNO 2016](https://store.steampowered.com/app/470220/UNO/) game.
 
 ### - Why did you make this?
 
@@ -17,6 +17,25 @@ Here are the changes I've made with the game:
 - ExiMichi's [UNO skins](https://github.com/linkthehylian/UNoVSync/wiki/ExiMichi's-UNO-Skins)
 - V-Sync toggle in Settings (takes immediate effect)
 
+### - Can I get banned for using this?
+
+No, all modifications I (myself) and ExiMichi have made are local changes and only affect you.
+
+### - When do you roll out updates for the mod?
+
+When Ubisoft rolls out new updates for their game.
+
+### - Am I allowed to make modifications to this and redistribute it?
+
+Rather you wouldn't, if you want something added/modified me you can contact me (found below).
+
 ### - Are you able to fix the disconnection issues?
 
 Probably not. That's something on Ubisoft's end.
+
+### - Can I contact you if I have any questions?
+
+Sure. 
+
+Steam: linktheweeb
+Discord: linkthehylian#2771
