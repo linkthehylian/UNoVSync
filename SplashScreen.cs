@@ -18,12 +18,18 @@ public class SplashScreen : MonoBehaviour
 
     public GameObject m_epilepsyWarning;
 
+    public static bool onlyUplay = false;
+
+    public static bool readyForMain = false;
+
     //private readonly List<MovieTexture> m_movieList = new List<MovieTexture>();
 
     //private readonly bool m_showVideo;
 
     private void Start()
     {
+        readyForMain = true;
+        onlyUplay = false;
         SimpleSingleton<UplayPC>.Instance.Attach();
         initGamePlayLogic();
         StartCoroutine(begin());
@@ -43,6 +49,18 @@ public class SplashScreen : MonoBehaviour
         GameObject prefab = resourceRequest.asset as GameObject;
         Singleton<PreloadSystem>.Instance.cacheGameObject(prefab, url);
         SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single); //Immediately load the main menu.
+        readyForMain = false;
+        HOInteraction.vsync = PlayerPrefs.GetInt("Vsync") == 1;
+        if (PlayerPrefs.GetInt("Vsync") == 1)
+        {
+            QualitySettings.vSyncCount = 1;
+            Application.targetFrameRate = 60;
+        }
+        else
+        {
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = -1;
+        }
     }
 
     /*private void playMovies()

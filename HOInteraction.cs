@@ -2,15 +2,6 @@ using UnityEngine;
 
 public class HOInteraction : MonoBehaviour
 {
-	private void Start()
-	{
-        
-    }
-
-	private void Update()
-	{
-	}
-
     public static bool vsync = false;
 
     void OnGUI()
@@ -30,7 +21,15 @@ public class HOInteraction : MonoBehaviour
         GUILayout.EndArea();
     }
 
-    public void playForwardTweeners()
+    private void Start()
+	{
+	}
+
+	private void Update()
+	{
+	}
+
+	public void playForwardTweeners()
 	{
 		UITweener[] components = base.GetComponents<UITweener>();
 		UITweener[] array = components;

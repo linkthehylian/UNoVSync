@@ -1,7 +1,6 @@
 using GamepadInput;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UNO.GamePlay;
 using UNO.Networking;
 using UNO.Save;
@@ -149,7 +148,7 @@ namespace UNO
 		private IEnumerator waitForLoadingCompleted()
 		{
 			yield return (object)new WaitForSeconds(0.1f);
-			ao = SceneManager.LoadSceneAsync("MainMenu");
+			ao = Application.LoadLevelAsync("MainMenu");
 			ao.allowSceneActivation = false;
 			ao.priority = 4;
 			while (ao.progress < 0.9f)

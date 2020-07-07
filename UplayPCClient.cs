@@ -117,8 +117,7 @@ internal class UplayPCClient
 			}
             SplashScreen.readyForMain = false;
             SplashScreen.onlyUplay = true;
-            Debug.Log("Uno quit");
-			Application.Quit();
+            Application.Quit();
 		}
 		else
 		{
@@ -142,6 +141,8 @@ internal class UplayPCClient
 		case 30001u:
 			if (Matchmaker_Rdv.Instance.IsTitleScreenProcessComplete)
 			{
+				UbiservicesNative.NativeMethods.SyncUplayRewards((int)SimpleSingleton<UserManagerAdapter>.Instance.MainUserGamepadIndex());
+				UbiservicesNative.NativeMethods.SyncUplayActions((int)SimpleSingleton<UserManagerAdapter>.Instance.MainUserGamepadIndex());
 				SimpleSingleton<ProductManager>.Instance.CheckUplayDLC();
 			}
 			SimpleSingleton<InputHandler>.Instance.EnableAfterAllKeyReleased();
@@ -153,7 +154,6 @@ internal class UplayPCClient
 		case 50000u:
 		{
 			UplayAccountSharingMessage uplayAccountSharingMessage = new UplayAccountSharingMessage();
-			Debug.Log("Uno quit2");
 			uplayAccountSharingMessage.RegisterConfirmEvent(delegate
 			{
 				Application.Quit();

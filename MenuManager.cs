@@ -224,11 +224,6 @@ namespace UNO
 
 		public event BackToPauseMenuDelegate OnBackToPauseMenu;
 
-        public void OnApplicationQuit()
-        {
-            PlayerPrefs.SetInt("Vsync", HOInteraction.vsync == true ? 1 : 0);
-        }
-
 		public static void OnQuotaFinishedPopup()
 		{
 			string term = "UI_ONLINE_POPUP_GO_TO_ONLINE";
@@ -286,11 +281,8 @@ namespace UNO
 
 		private void Start()
 		{
-            //gameObject.AddComponent<NGUIToolsEx>();
             if (!GameObject.Find("MichiManager"))
-            {
                 new GameObject("MichiManager").AddComponent<CardSkinManager>();
-            }
             onStart();
 			HyperJumpBack = (UNOMenu.lastSelMenuId == startupMenuNode);
 			injectCommonEditableMenuLists();
