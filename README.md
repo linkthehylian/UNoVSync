@@ -37,5 +37,5 @@ Probably not. That's something on Ubisoft's end.
 
 Sure. 
 
-Steam: linktheweeb
+Steam: linkthehylian_
 Discord: linkthehylian#2771
