@@ -17,6 +17,10 @@ Here are the changes I've made with the game:
 - ExiMichi's [UNO skins](https://github.com/linkthehylian/UNoVSync/wiki/ExiMichi's-UNO-Skins)
 - V-Sync toggle in Settings (takes immediate effect)
 
+### - Can I use your mod with the Ubisoft specific version of Uno?
+
+I have no plans to modify it specifically for their client. Buy the game on Steam if you want to use it.
+
 ### - Can I get banned for using this?
 
 No, all modifications I (myself) and ExiMichi have made are local changes and only affect you.
